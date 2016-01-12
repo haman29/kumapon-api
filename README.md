@@ -1,9 +1,3 @@
-# Kumapon::Api
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kumapon/api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,13 +16,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### initialize kumapon client.
+```
+require 'kumapon-api'
 
-## Development
+cli = Kumapon::Client.new
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### fetch all deal ids each all areas.
+```
+cli.areas
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### fetch all deal ids each all area_groups.
+```
+cli.area_groups
+```
+
+### fetch all deal ids includes a area (ex: 25).
+```
+cli.areas 25
+```
+
+### fetch a deal description.
+```
+cli.deals '20160112kpd041101'
+```
+or
+```
+cli.deals 112014
+```
 
 ## Contributing
 
